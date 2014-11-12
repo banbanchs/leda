@@ -8,3 +8,8 @@ from .serializers import AirAverageSerializer, AirConditionSerializer
 class AirConditionViewSets(viewsets.ReadOnlyModelViewSet):
     queryset = AirCondition.objects.all().order_by('-time')[:24]    # 24 hours
     serializer_class = AirConditionSerializer
+
+
+class AirAverageViewSets(viewsets.ReadOnlyModelViewSet):
+    queryset = AirAverage.objects.all().order_by('-from_time')[:10]     # 5 days
+    serializer_class = AirAverageSerializer
