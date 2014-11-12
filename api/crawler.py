@@ -9,14 +9,16 @@ from requests_oauthlib import OAuth1Session
 from models import AirCondition, AirAverage
 from leda import settings
 
-
+# From http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
 definition_map = {
     'No data': -1,
     'Good': 1,
     'Moderate': 2,
     'Unhealthy for Sensitive Groups': 3,
     'Unhealthy': 4,  # 100 < value < 150
-    'Unknown': 5,  # value > 150
+    'Very Unhealthy': 5,
+    'Hazardous': 6,
+    'Unknown': 7,
 }
 
 
