@@ -10,7 +10,7 @@ from models import AirCondition, AirAverage
 from leda import settings
 
 # From http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
-definition_map = {
+level_map = {
     'No data': -1,
     'Good': 1,
     'Moderate': 2,
@@ -93,10 +93,10 @@ def match(tweet=None):
     if 'avg' in text:
         pattern = re.compile(r'^(?P<from_time>\d{2}-\d{2}-\d{4}\s\d{2}:\d{2})\sto\s'
                              r'(?P<to_time>\d{2}-\d{2}-\d{4}\s\d{2}:\d{2});[^;]+;\s'
-                             r'(?P<pm2_5>\d+\.\d);\s(?P<aqi>\d+);\s(?P<definition>[^(]+)$', flags=re.UNICODE)
+                             r'(?P<pm2_5>\d+\.\d);\s(?P<aqi>\d+);\s(?P<level>[^(]+)$', flags=re.UNICODE)
     else:
         pattern = re.compile(r'^(?P<time>\d{2}-\d{2}-\d{4}\s\d{2}:\d{2});\sPM2.5;\s(?P<pm2_5>\d+\.\d);\s'
-                             r'(?P<aqi>\d+);\s(?P<definition>[^(]+)', flags=re.UNICODE)
+                             r'(?P<aqi>\d+);\s(?P<level>[^(]+)', flags=re.UNICODE)
     data = re.match(pattern, text)
     if data:
         return data.groupdict()
@@ -125,16 +125,16 @@ def run():
             if 'aqi' in msg and 'time' in msg:
                 air = AirCondition(pm2_5=float(msg.get('pm2_5')), aqi=int(msg.get('aqi')),
                                    time=get_datetime(msg.get('time')),
-                                   definition=definition_map[msg.get('definition').strip()])
+                                   level=level_map[msg.get('level').strip()])
             # 12h avg
             elif 'from_time' in msg:
                 air = AirAverage(pm2_5=float(msg.get('pm2_5')), aqi=int(msg.get('aqi')),
                                  from_time=get_datetime(msg.get('from_time')), to_time=get_datetime(msg.get('to_time')),
-                                 definition=definition_map[msg.get('definition').strip()])
+                                 level=level_map[msg.get('level').strip()])
             # no data
             elif 'info' in msg:
                 air = AirCondition(pm2_5=float(0.0), aqi=int(0), time=get_datetime(msg.get('time')),
-                                   definition=definition_map[msg.get('info', 'No data').strip()])
+                                   level=level_map[msg.get('info', 'No data').strip()])
             # unknown
             else:
                 break

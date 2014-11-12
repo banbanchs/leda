@@ -7,10 +7,10 @@ from .models import AirCondition, AirAverage
 class AirConditionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AirCondition
-        fields = ('pm2_5', 'aqi', 'city', 'definition', 'time')
+        fields = ('pm2_5', 'aqi', 'city', 'level', 'time')
 
 
 class AirAverageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AirAverage
-        fields = ('pm2_5', 'aqi', 'city', 'definition', 'from_time', 'to_time')
+        fields = ('pm2_5', 'aqi', 'city', 'level', 'from_time', 'to_time')

@@ -9,7 +9,7 @@ class AirCondition(models.Model):
     aqi = models.IntegerField()
     time = models.DateTimeField()
     city = models.CharField(max_length=255, default='Guangzhou')
-    definition = models.IntegerField()
+    level = models.IntegerField()
 
 
 class AirAverage(models.Model):
@@ -17,6 +17,6 @@ class AirAverage(models.Model):
     pm2_5 = models.FloatField()
     aqi = models.IntegerField()
     city = models.CharField(max_length=255, default='Guangzhou')
-    definition = models.IntegerField()
+    level = models.IntegerField()
     from_time = models.DateTimeField()
     to_time = models.DateTimeField()
