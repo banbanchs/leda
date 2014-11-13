@@ -114,9 +114,6 @@ def match(tweet=None):
 def run():
     since_id = SinceId()
     tweets = get_timeline('Guangzhou_Air', since_id=since_id.value)
-    print(len(tweets))
-    if tweets:
-        since_id.save(tweets[0]['id'])
     for tweet in tweets:
         msg = match(tweet)
         # if it match tweet, there are three condition: avg, hourly or nodata
@@ -140,4 +137,7 @@ def run():
                 break
             air.save()
             logging.info('New data saved.')
+    # save since_id after success
+    if tweets:
+        since_id.save(tweets[0]['id'])
     logging.debug('done')
