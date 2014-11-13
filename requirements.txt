@@ -2,5 +2,4 @@ django
 django-redis
 requests
 requests-oauthlib
-django-cron
 djangorestframework
