@@ -58,7 +58,7 @@ def get_datetime(s):
     return datetime.strptime(s, "%m-%d-%Y %H:%M")
 
 
-def get_timeline(username, since_id=None, count=10):
+def get_timeline(username, since_id=None, count=0):
     """Get the specified twitter user's timeline.
 
     :param username: The screen name of the user for whom to return results for.
@@ -75,10 +75,11 @@ def get_timeline(username, since_id=None, count=10):
     url = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
     params = {
         'screen_name': username,
-        'count': count,
     }
     if since_id:
         params.update(since_id=since_id)
+    if count:
+        params.update(count=count)
     r = twitter.get(url, params=params)
     return r.json()
 
