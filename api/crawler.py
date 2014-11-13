@@ -21,6 +21,8 @@ level_map = {
     'Unknown': 7,
 }
 
+logger = logging.getLogger('crawler')
+
 
 class SinceId(object):
     """Creating a file to save since id"""
@@ -105,15 +107,16 @@ def match(tweet=None):
     # try find out this tweet is "no data" or not
     nodata = re.match(r'(?P<time>\d{2}-\d{2}-\d{4}\s\d{2}:\d{2});\sPM2.5;\s(?P<info>No\sData)', text, flags=re.UNICODE)
     if nodata:
-        logging.info("No data")
+        logger.debug("No data")
         return nodata.groupdict()
-    logging.warning("Fail to match tweet")
-    logging.warning(text)
+    logger.warning("Fail to match tweet")
+    logger.warning(text)
     return None
 
 
 def run():
     since_id = SinceId()
+    logger.debug("Start crawling")
     tweets = get_timeline('Guangzhou_Air', since_id=since_id.value)
     for tweet in tweets:
         msg = match(tweet)
@@ -137,8 +140,8 @@ def run():
             else:
                 break
             air.save()
-            logging.info('New data saved.')
+            logger.debug('New data saved.')
     # save since_id after success
     if tweets:
         since_id.save(tweets[0]['id'])
-    logging.debug('done')
+    logger.debug('done')
