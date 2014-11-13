@@ -114,10 +114,10 @@ def match(tweet=None):
     return None
 
 
-def run():
+def run(count=0):
     since_id = SinceId()
     logger.debug("Start crawling")
-    tweets = get_timeline('Guangzhou_Air', since_id=since_id.value)
+    tweets = get_timeline('Guangzhou_Air', since_id=since_id.value, count=count)
     for tweet in tweets:
         msg = match(tweet)
         # if it match tweet, there are three condition: avg, hourly or nodata

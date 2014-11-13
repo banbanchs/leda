@@ -7,4 +7,7 @@ from api.crawler import run
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        run()
+        if args:
+            run(int(args[0]))
+        else:
+            run()
