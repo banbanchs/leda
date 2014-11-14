@@ -144,4 +144,5 @@ def run(count=0):
     # save since_id after success
     if tweets:
         since_id.save(tweets[0]['id'])
+        logger.debug(tweets[0]['id'])
     logger.debug('done')
