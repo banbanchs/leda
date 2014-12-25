@@ -7,6 +7,7 @@ from api import views
 
 router = routers.DefaultRouter()
 router.register(r'pm25', views.AirConditionViewSets)
+router.register(r'pm25_avg', views.AirAverageViewSets)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
