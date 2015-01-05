@@ -114,7 +114,7 @@ def match(tweet=None):
     return None
 
 
-def run(count=0):
+def run(count=200):
     since_id = SinceId()
     logger.debug("Start crawling")
     tweets = get_timeline('Guangzhou_Air', since_id=since_id.value, count=count)
