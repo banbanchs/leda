@@ -10,6 +10,7 @@ router.register(r'pm25', views.AirConditionViewSets)
 router.register(r'pm25_avg', views.AirAverageViewSets)
 
 urlpatterns = [
+    url(r'^$', include('home.urls', namespace='home')),
     url(r'^api/', include(router.urls)),
     # url(r'api/', include('rest_framework.urls', namespace='rest_framework')),
 ]

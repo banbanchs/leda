@@ -61,3 +61,6 @@ db.sqlite3
 
 *.txt
 *.zip
+
+*.js
+*.css
