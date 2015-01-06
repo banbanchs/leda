@@ -134,7 +134,7 @@ def run(count=200):
                                  level=level_map[msg.get('level').strip()])
             # no data
             elif 'info' in msg:
-                air = AirCondition(pm2_5=float(0.0), aqi=int(0), time=get_datetime(msg.get('time')),
+                air = AirCondition(pm2_5=float(-1.0), aqi=int(-1), time=get_datetime(msg.get('time')),
                                    level=-1)
             # unknown
             else:

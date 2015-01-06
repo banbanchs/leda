@@ -8,12 +8,18 @@ $ ->
   $.getJSON '/api/pm25/', (data) ->
     for i in data
       xdata.unshift i.time[-8..-7] + '时'
-      pm25_data.unshift i.pm2_5
-      aqi_data.unshift i.aqi
+      if i.pm2_5 != -1
+        pm25_data.unshift i.pm2_5
+      else
+        pm25_data.unshift '-'
+      if i.aqi != -1
+        aqi_data.unshift i.aqi
+      else
+        aqi_data.unshift '-'
     myChart.hideLoading()
     option =
       title:
-        text: '最近24小时pm2.5含量的变化',
+        text: '最近12小时pm2.5含量的变化',
         # subtext: '纯属虚构'
       tooltip:
         trigger: 'axis'
