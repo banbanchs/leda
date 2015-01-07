@@ -1,5 +1,7 @@
 django
 django-redis
+psycopg2
 requests
 requests-oauthlib
 djangorestframework
+django-debug-toolbar
