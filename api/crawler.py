@@ -10,6 +10,14 @@ from requests_oauthlib import OAuth1Session
 from models import AirCondition, AirAverage
 from leda import settings
 
+# From https://twitter.com/Guangzhou_Air/following
+CITYS = {
+    'Guangzhou_Air': 'Guangzhou',
+    'BeijingAir': 'Beijing',
+    'Shenyang_Air': 'Shenyang',
+    'CGChengduAir': 'Chengdu',
+}
+
 # From http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/
 level_map = {
     'No data': -1,
@@ -119,11 +127,11 @@ def match(tweet=None):
     return None
 
 
-def run(count=200):
-    since_id = SinceId()
-    logger.debug("Start crawling")
-    tweets = get_timeline('Guangzhou_Air', since_id=since_id.value, count=count)
+def crawl(since_id, city, count=200):
+    logger.debug("Start crawling {}".format(city))
+    tweets = get_timeline(city, since_id=since_id[city], count=count)
     for tweet in tweets:
+        logger.debug(tweet['text'])
         msg = match(tweet)
         # if it match tweet, there are three condition: avg, hourly or nodata
         if msg:
@@ -148,6 +156,13 @@ def run(count=200):
             logger.debug('New data saved.')
     # save since_id after success
     if tweets:
-        since_id.save(tweets[0]['id'])
-        logger.debug(tweets[0]['id'])
+        # since_id.save(city, tweets[0]['id'])
+        since_id[city] = tweets[0]['id']
+        logger.debug("{}: {}".format(city, tweets[0]['id']))
     logger.debug('done')
+
+
+def run():
+    with SinceId() as since_id:
+        for city in CITYS.keys():
+            crawl(since_id, city, 2)
