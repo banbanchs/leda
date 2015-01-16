@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import re
+import json
 import os.path
 import logging
 from datetime import datetime
@@ -26,34 +27,38 @@ logger = logging.getLogger('crawler')
 
 class SinceId(object):
     """Creating a file to save since id"""
-    def __init__(self):
+    def __init__(self, fname='since_id.json'):
         self._module_path = os.path.dirname(__file__)
-        self._file_path = os.path.join(self._module_path, 'since_id.txt')
-        self._id = self._recover()
+        self._file_path = os.path.join(self._module_path, fname)
+        self._ids = self._recover()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self._save()
+
+    def __getitem__(self, item):
+        if not self._ids:
+            return None
+        return self._ids.get(item)
+
+    def __setitem__(self, key, value):
+        self._ids[key] = value
 
     def _save(self):
+        if not self._ids:
+            return
         with open(self._file_path, mode='w') as f:
-            f.write(self._id)
-
-    @property
-    def value(self):
-        return self._id
+            json.dump(self._ids, f)
 
     def _recover(self):
         """Recovery `since_id` from file"""
         if os.path.isfile(self._file_path):
             with open(self._file_path) as f:
-                since_id = f.readline()
-            if since_id:
-                return since_id.strip()
-        return None
-
-    def save(self, new_id):
-        new_id = str(new_id)
-        if self._id == new_id:
-            return
-        self._id = new_id
-        self._save()
+                json_data = json.load(f)
+                return json_data
+        return dict()
 
 
 def get_datetime(s):
