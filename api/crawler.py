@@ -128,7 +128,7 @@ def match(tweet=None):
 
 
 def crawl(since_id, city, count=200):
-    logger.debug("Start crawling {}".format(city))
+    logger.debug("Start crawling {}".format(CITYS[city]))
     tweets = get_timeline(city, since_id=since_id[city], count=count)
     for tweet in tweets:
         logger.debug(tweet['text'])
@@ -148,7 +148,7 @@ def crawl(since_id, city, count=200):
             # no data
             elif 'info' in msg:
                 air = AirCondition(pm2_5=float(-1.0), aqi=int(-1), time=get_datetime(msg.get('time')),
-                                   level=-1)
+                                   city=CITYS[city], level=-1)
             # unknown
             else:
                 break
@@ -165,4 +165,4 @@ def crawl(since_id, city, count=200):
 def run():
     with SinceId() as since_id:
         for city in CITYS.keys():
-            crawl(since_id, city, 2)
+            crawl(since_id, city)
