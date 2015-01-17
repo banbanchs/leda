@@ -1,15 +1,26 @@
 # coding=utf-8
 
+import logging
 from rest_framework import viewsets
 from .models import AirCondition, AirAverage
 from .serializers import AirAverageSerializer, AirConditionSerializer
 
 
 class AirConditionViewSets(viewsets.ReadOnlyModelViewSet):
-    queryset = AirCondition.objects.all().order_by('-time')[:12]    # 12 hours
     serializer_class = AirConditionSerializer
+    lookup_url_kwarg = 'city'
+
+    def get_queryset(self):
+        city_name = self.request.QUERY_PARAMS.get(self.lookup_url_kwarg)
+        queryset = AirCondition.objects.filter(city=city_name)
+        return queryset.order_by('-time')[:12]
 
 
 class AirAverageViewSets(viewsets.ReadOnlyModelViewSet):
-    queryset = AirAverage.objects.all().order_by('-from_time')[:10]     # 5 days
     serializer_class = AirAverageSerializer
+    lookup_url_kwarg = 'city'
+
+    def get_queryset(self):
+        city_name = self.request.QUERY_PARAMS.get(self.lookup_url_kwarg)
+        queryset = AirAverage.objects.filter(city=city_name)
+        return queryset.order_by('-from_time')[:10]
