@@ -10,11 +10,9 @@ $ ->
       xdata.unshift i.time[-9..-8] + '时'
       if i.pm2_5 != -1
         pm25_data.unshift i.pm2_5
-      else
-        pm25_data.unshift '-'
-      if i.aqi != -1
         aqi_data.unshift i.aqi
       else
+        pm25_data.unshift '-'
         aqi_data.unshift '-'
     myChart.hideLoading()
     option =
