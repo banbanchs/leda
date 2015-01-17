@@ -27,7 +27,8 @@ level_map = {
     'Unhealthy': 4,  # 100 < value < 150
     'Very Unhealthy': 5,
     'Hazardous': 6,
-    'Unknown': 7,
+    'Beyond Index': 7,  # for Beijing value > 500
+    'Unknown': 8,
 }
 
 logger = logging.getLogger('crawler')
