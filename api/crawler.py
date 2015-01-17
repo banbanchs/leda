@@ -139,13 +139,13 @@ def crawl(since_id, city, count=200):
             # hourly
             if 'aqi' in msg and 'time' in msg:
                 air = AirCondition(pm2_5=float(msg.get('pm2_5')), aqi=int(msg.get('aqi')),
-                                   time=get_datetime(msg.get('time')),
+                                   time=get_datetime(msg.get('time')), city=CITYS[city],
                                    level=level_map[msg.get('level').strip()])
             # 12h avg
             elif 'from_time' in msg:
                 air = AirAverage(pm2_5=float(msg.get('pm2_5')), aqi=int(msg.get('aqi')),
                                  from_time=get_datetime(msg.get('from_time')), to_time=get_datetime(msg.get('to_time')),
-                                 level=level_map[msg.get('level').strip()])
+                                 city=CITYS[city], level=level_map[msg.get('level').strip()])
             # no data
             elif 'info' in msg:
                 air = AirCondition(pm2_5=float(-1.0), aqi=int(-1), time=get_datetime(msg.get('time')),
