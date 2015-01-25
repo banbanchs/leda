@@ -11,6 +11,9 @@ class AirCondition(models.Model):
     city = models.CharField(max_length=255, default='Guangzhou', db_index=True)
     level = models.IntegerField()
 
+    class Meta:
+        ordering = ['-time']
+
 
 class AirAverage(models.Model):
     """Record air condition daily (12h)"""
@@ -20,3 +23,6 @@ class AirAverage(models.Model):
     level = models.IntegerField()
     from_time = models.DateTimeField(db_index=True)
     to_time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['-from_time']
