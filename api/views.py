@@ -11,7 +11,7 @@ class AirConditionViewSets(viewsets.ReadOnlyModelViewSet):
     lookup_url_kwarg = 'city'
 
     def get_queryset(self):
-        city_name = self.request.QUERY_PARAMS.get(self.lookup_url_kwarg)
+        city_name = self.kwargs.get(self.lookup_url_kwarg)
         queryset = AirCondition.objects.filter(city=city_name)
         return queryset[:12]
 
@@ -21,6 +21,6 @@ class AirAverageViewSets(viewsets.ReadOnlyModelViewSet):
     lookup_url_kwarg = 'city'
 
     def get_queryset(self):
-        city_name = self.request.QUERY_PARAMS.get(self.lookup_url_kwarg)
+        city_name = self.kwargs.get(self.lookup_url_kwarg)
         queryset = AirAverage.objects.filter(city=city_name)
         return queryset[:10]
