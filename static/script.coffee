@@ -1,11 +1,29 @@
-$ ->
+setCookie = (name, value, days) ->
+  if days
+    date = new Date()
+    date.setTime date.getTime() + (days * 24 * 60 * 60 * 1000)
+    expires = "; expires=#{date.toGMTString}"
+  else
+    expires = ""
+  console.log "success#{value}"
+  document.cookie = "#{name}=#{value} #{expires}; path=/"
+
+getCookie = (name) ->
+  nameEQ = "#{name}="
+  cookies = document.cookie.split "; "
+  for cookie in cookies
+    if cookie.indexOf("#{name}=") is 0
+      return cookie[name.length+1..]
+  null
+
+renderChart = (city) ->
   xdata = []
   pm25_data = []
   aqi_data = []
   myChart = echarts.init(document.getElementById('charts'))
   myChart.showLoading
     text: '正在努力的读取数据中...'
-  $.getJSON "/api/pm25/#{city}/lastest", (data) ->
+  $.getJSON "/api/pm25/#{city}/lastest/", (data) ->
     for i in data
       xdata.unshift i.time[-9..-8] + '时'
       if i.pm2_5 != -1
@@ -17,8 +35,7 @@ $ ->
     myChart.hideLoading()
     option =
       title:
-        text: '最近12小时pm2.5含量的变化',
-        # subtext: '纯属虚构'
+        text: '最近12小时空气质量的变化',
       tooltip:
         trigger: 'axis'
       legend:
@@ -66,3 +83,31 @@ $ ->
       ]
 
     myChart.setOption option
+ 
+
+$ ->
+  city = getCookie('city')
+  availableCity = ['Guangzhou', 'Beijing', 'Chengdu', 'Shenyang']
+  if city not in availableCity
+    city = 'Guangzhou'
+  # console.log city
+  renderChart city
+
+  # listen city click
+  # FIXME: clean this quick and dirty code
+  $('#Guangzhou').click () ->
+    setCookie 'city', 'Guangzhou', 7
+    renderChart 'Guangzhou'
+    return false
+  $('#Beijing').click () ->
+    setCookie 'city', 'Beijing', 7
+    renderChart 'Beijing'
+    return false
+  $('#Shenyang').click () ->
+    setCookie 'city', 'Shenyang', 7
+    renderChart 'Shenyang'
+    return false
+  $('#Chengdu').click () ->
+    setCookie 'city', 'Chengdu', 7
+    renderChart 'Chengdu'
+    return false
