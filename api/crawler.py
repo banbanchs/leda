@@ -16,6 +16,7 @@ CITYS = {
     'BeijingAir': 'Beijing',
     'Shenyang_Air': 'Shenyang',
     'CGChengduAir': 'Chengdu',
+    'CGShanghaiAir': 'Shanghai',
 }
 
 # From http://aqicn.org/faq/2013-09-09/revised-pm25-aqi-breakpoints/

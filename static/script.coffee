@@ -87,7 +87,7 @@ renderChart = (city) ->
 
 $ ->
   city = getCookie('city')
-  availableCity = ['Guangzhou', 'Beijing', 'Chengdu', 'Shenyang']
+  availableCity = ['Guangzhou', 'Beijing', 'Shanghai', 'Chengdu', 'Shenyang']
   if city not in availableCity
     city = 'Guangzhou'
   # console.log city
@@ -102,6 +102,10 @@ $ ->
   $('#Beijing').click () ->
     setCookie 'city', 'Beijing', 7
     renderChart 'Beijing'
+    return false
+  $('#Shanghai').click () ->
+    setCookie 'city', 'Shanghai', 7
+    renderChart 'Shanghai'
     return false
   $('#Shenyang').click () ->
     setCookie 'city', 'Shenyang', 7
