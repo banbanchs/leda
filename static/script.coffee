@@ -10,23 +10,23 @@ define ['jquery', 'semantic', 'utils', 'charts'], ($, semantic, utils, charts) -
   # FIXME: clean this quick and dirty code
   $('#Guangzhou').click () ->
     utils.setCookie 'city', 'Guangzhou', 7
-    utils.renderChart 'Guangzhou'
+    charts.renderChart 'Guangzhou'
     return false
   $('#Beijing').click () ->
     utils.setCookie 'city', 'Beijing', 7
-    utils.renderChart 'Beijing'
+    charts.renderChart 'Beijing'
     return false
   $('#Shanghai').click () ->
     utils.setCookie 'city', 'Shanghai', 7
-    utils.renderChart 'Shanghai'
+    charts.renderChart 'Shanghai'
     return false
   $('#Shenyang').click () ->
     utils.setCookie 'city', 'Shenyang', 7
-    utils.renderChart 'Shenyang'
+    charts.renderChart 'Shenyang'
     return false
   $('#Chengdu').click () ->
     utils.setCookie 'city', 'Chengdu', 7
-    utils.renderChart 'Chengdu'
+    charts.renderChart 'Chengdu'
     return false
   $(".ui.dropdown").dropdown
     on: 'hover'
