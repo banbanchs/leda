@@ -1,0 +1,462 @@
+[
+{
+    "fields": {
+        "pm2_5": 68.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 157,
+        "time": "2014-11-13T22:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 1
+},
+{
+    "fields": {
+        "pm2_5": 69.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 158,
+        "time": "2014-11-13T21:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 2
+},
+{
+    "fields": {
+        "pm2_5": 79.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 163,
+        "time": "2014-11-13T20:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 3
+},
+{
+    "fields": {
+        "pm2_5": -1.0,
+        "city": "Guangzhou",
+        "level": -1,
+        "aqi": -1,
+        "time": "2014-11-13T19:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 4
+},
+{
+    "fields": {
+        "pm2_5": 51.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "aqi": 139,
+        "time": "2014-11-13T18:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 5
+},
+{
+    "fields": {
+        "pm2_5": -1.0,
+        "city": "Guangzhou",
+        "level": -1,
+        "aqi": -1,
+        "time": "2014-11-13T17:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 6
+},
+{
+    "fields": {
+        "pm2_5": -1.0,
+        "city": "Guangzhou",
+        "level": -1,
+        "aqi": -1,
+        "time": "2014-11-13T16:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 7
+},
+{
+    "fields": {
+        "pm2_5": -1.0,
+        "city": "Guangzhou",
+        "level": -1,
+        "aqi": -1,
+        "time": "2014-11-13T15:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 8
+},
+{
+    "fields": {
+        "pm2_5": -1.0,
+        "city": "Guangzhou",
+        "level": -1,
+        "aqi": -1,
+        "time": "2014-11-13T14:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 9
+},
+{
+    "fields": {
+        "pm2_5": 62.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 154,
+        "time": "2014-11-13T13:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 10
+},
+{
+    "fields": {
+        "pm2_5": 62.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 154,
+        "time": "2014-11-13T12:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 11
+},
+{
+    "fields": {
+        "pm2_5": 63.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 155,
+        "time": "2014-11-13T11:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 12
+},
+{
+    "fields": {
+        "pm2_5": 66.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 156,
+        "time": "2014-11-13T10:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 13
+},
+{
+    "fields": {
+        "pm2_5": 60.0,
+        "city": "Guangzhou",
+        "level": 4,
+        "aqi": 153,
+        "time": "2014-11-13T09:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 14
+},
+{
+    "fields": {
+        "pm2_5": 55.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "aqi": 149,
+        "time": "2014-11-13T08:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 15
+},
+{
+    "fields": {
+        "pm2_5": 49.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "aqi": 134,
+        "time": "2014-11-13T07:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 16
+},
+{
+    "fields": {
+        "pm2_5": 48.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "aqi": 132,
+        "time": "2014-11-13T06:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 17
+},
+{
+    "fields": {
+        "pm2_5": 40.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "aqi": 112,
+        "time": "2014-11-13T05:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 18
+},
+{
+    "fields": {
+        "pm2_5": 35.0,
+        "city": "Guangzhou",
+        "level": 2,
+        "aqi": 99,
+        "time": "2014-11-13T04:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 19
+},
+{
+    "fields": {
+        "pm2_5": 25.0,
+        "city": "Guangzhou",
+        "level": 2,
+        "aqi": 78,
+        "time": "2014-11-13T02:00:00Z"
+    },
+    "model": "api.aircondition",
+    "pk": 20
+},
+{
+    "fields": {
+        "pm2_5": 31.9,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-13T11:59:00Z",
+        "aqi": 93,
+        "from_time": "2014-11-12T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 1
+},
+{
+    "fields": {
+        "pm2_5": 16.0,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-12T23:59:00Z",
+        "aqi": 59,
+        "from_time": "2014-11-12T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 2
+},
+{
+    "fields": {
+        "pm2_5": 19.3,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-12T11:59:00Z",
+        "aqi": 66,
+        "from_time": "2014-11-11T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 3
+},
+{
+    "fields": {
+        "pm2_5": 23.2,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-11T23:59:00Z",
+        "aqi": 74,
+        "from_time": "2014-11-11T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 4
+},
+{
+    "fields": {
+        "pm2_5": 22.5,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-11T11:59:00Z",
+        "aqi": 73,
+        "from_time": "2014-11-10T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 5
+},
+{
+    "fields": {
+        "pm2_5": 21.7,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-10T23:59:00Z",
+        "aqi": 71,
+        "from_time": "2014-11-10T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 6
+},
+{
+    "fields": {
+        "pm2_5": 31.4,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-10T11:59:00Z",
+        "aqi": 92,
+        "from_time": "2014-11-09T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 7
+},
+{
+    "fields": {
+        "pm2_5": 32.1,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-09T23:59:00Z",
+        "aqi": 93,
+        "from_time": "2014-11-09T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 8
+},
+{
+    "fields": {
+        "pm2_5": 16.6,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-09T11:59:00Z",
+        "aqi": 60,
+        "from_time": "2014-11-08T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 9
+},
+{
+    "fields": {
+        "pm2_5": 7.8,
+        "city": "Guangzhou",
+        "level": 1,
+        "to_time": "2014-11-08T23:59:00Z",
+        "aqi": 33,
+        "from_time": "2014-11-08T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 10
+},
+{
+    "fields": {
+        "pm2_5": 23.7,
+        "city": "Guangzhou",
+        "level": 2,
+        "to_time": "2014-11-08T11:59:00Z",
+        "aqi": 75,
+        "from_time": "2014-11-07T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 11
+},
+{
+    "fields": {
+        "pm2_5": 40.6,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-07T23:59:00Z",
+        "aqi": 114,
+        "from_time": "2014-11-07T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 12
+},
+{
+    "fields": {
+        "pm2_5": 40.7,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-07T11:59:00Z",
+        "aqi": 114,
+        "from_time": "2014-11-06T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 13
+},
+{
+    "fields": {
+        "pm2_5": 48.7,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-06T23:59:00Z",
+        "aqi": 134,
+        "from_time": "2014-11-06T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 14
+},
+{
+    "fields": {
+        "pm2_5": 56.2,
+        "city": "Guangzhou",
+        "level": 4,
+        "to_time": "2014-11-06T11:59:00Z",
+        "aqi": 151,
+        "from_time": "2014-11-05T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 15
+},
+{
+    "fields": {
+        "pm2_5": 53.5,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-13T23:59:00Z",
+        "aqi": 145,
+        "from_time": "2014-11-13T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 16
+},
+{
+    "fields": {
+        "pm2_5": 61.7,
+        "city": "Guangzhou",
+        "level": 4,
+        "to_time": "2014-11-14T11:59:00Z",
+        "aqi": 154,
+        "from_time": "2014-11-13T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 17
+},
+{
+    "fields": {
+        "pm2_5": 51.3,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-14T23:59:00Z",
+        "aqi": 140,
+        "from_time": "2014-11-14T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 18
+},
+{
+    "fields": {
+        "pm2_5": 44.8,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-15T11:59:00Z",
+        "aqi": 124,
+        "from_time": "2014-11-14T12:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 19
+},
+{
+    "fields": {
+        "pm2_5": 55.0,
+        "city": "Guangzhou",
+        "level": 3,
+        "to_time": "2014-11-15T23:59:00Z",
+        "aqi": 149,
+        "from_time": "2014-11-15T00:00:00Z"
+    },
+    "model": "api.airaverage",
+    "pk": 20
+}
+]

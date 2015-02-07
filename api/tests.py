@@ -12,7 +12,7 @@ class ApiTest(APITestCase):
         self.client = APIClient()
         self.city = {'city': 'Guangzhou'}
         # load fixtures
-        call_command('loaddata', 'dumpdata.json', verbosity=0)
+        call_command('loaddata', 'api/fixtures/test.json', verbosity=0)
 
     def test_air_condition(self):
         """Test hourly pm2.5 api"""
