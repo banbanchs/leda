@@ -1,0 +1,23 @@
+notifications:
+  email: false
+language: python
+services:
+  - postgresql
+python:
+  - "2.7"
+  - "3.4"
+env:
+  - DB=mysql
+  - DB=postgresql
+  - PIP_USE_MIRRORS=true
+  - DJANGO="Django==1.7"
+install:
+  - pip install -q Django==$DJANGO
+  - pip install -r requirements.txt
+  - pip install coveralls
+before_script:
+- psql -c "CREATE DATABASE travisdb;" -U postgres
+script:
+  - python manage.py test
+
+# vim: set ts=2 sw=2 et
