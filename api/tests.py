@@ -19,13 +19,13 @@ class ApiTest(APITestCase):
         url = reverse('api:pm25-list', kwargs=self.city)
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Guangzhou', response.content)
+        self.assertIn('Guangzhou', response.content.decode('utf-8'))
 
     def test_air_average(self):
         """Test pm2.5 average api"""
         url = reverse('api:pm25-avg-list', kwargs=self.city)
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Guangzhou', response.content)
-        self.assertIn('from_time', response.content)
-        self.assertIn('to_time', response.content)
+        self.assertIn('Guangzhou', response.content.decode('utf-8'))
+        self.assertIn('from_time', response.content.decode('utf-8'))
+        self.assertIn('to_time', response.content.decode('utf-8'))
