@@ -1,7 +1,8 @@
 # coding=utf-8
 
-import views
 from rest_framework import routers
+
+from . import views
 
 
 api_router = routers.DefaultRouter()
