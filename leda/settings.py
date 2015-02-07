@@ -150,10 +150,10 @@ STATICFILES_DIRS = (
 
 # Twitter key
 
-CLIENT_KEY = '***REMOVED***'
-CLIENT_SECRET = '***REMOVED***'
-ACCESS_TOKEN_KEY = '***REMOVED***'
-ACCESS_TOKEN_SECRET = '***REMOVED***'
+CLIENT_KEY = ''
+CLIENT_SECRET = ''
+ACCESS_TOKEN_KEY = ''
+ACCESS_TOKEN_SECRET = ''
 
 
 # load production server
