@@ -4,7 +4,7 @@ from .settings import BASE_DIR
 SECRET_KEY = ''
 ALLOWED_HOSTS = ['']
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfile")
-TABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'air',
