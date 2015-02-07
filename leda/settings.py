@@ -26,6 +26,15 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOCAL_DEVELOPMENT, TRAVIS_ENVIRONMENT = False, False
+
+if 'TRAVIS' in os.environ:
+    TRAVIS_ENVIRONMENT = True
+elif os.environ.get('USER') == 'memory':
+    LOCAL_DEVELOPMENT = True
+else:
+    DEBUG = False
+    TEMPLATE_DEBUG = False
 
 # Application definition
 
@@ -59,17 +68,28 @@ WSGI_APPLICATION = 'leda.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'air',
-        'USER': 'postgres',
-        'PASSWORD': '3707',
-        'HOST': 'localhost',
-        'PORT': '',
+if TRAVIS_ENVIRONMENT:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'travisci',
+            'USER': 'postgres',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
     }
-}
+elif LOCAL_DEVELOPMENT:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'air',
+            'USER': 'postgres',
+            'PASSWORD': '3707',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 
 # Logging
@@ -135,6 +155,9 @@ CLIENT_SECRET = '***REMOVED***'
 ACCESS_TOKEN_KEY = '***REMOVED***'
 ACCESS_TOKEN_SECRET = '***REMOVED***'
 
-CRON_CLASSES = [
-    "api.cronjob.CrawlTwitterCronJob",
-]
+
+# load production server
+if not DEBUG:
+    # Check https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/#python-options
+    os.environ['PYTHONHASHSEED'] = 'random'
+    from leda.devsetting import *
