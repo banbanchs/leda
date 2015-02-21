@@ -8,7 +8,7 @@ define () ->
     myChart.showLoading
       text: '正在努力的读取数据中...'
     $ = require 'jquery'
-    $.getJSON "/api/pm25/#{city}/lastest/", (data) ->
+    $.getJSON "/api/pm25/#{city}/latest/", (data) ->
       for i in data
         xdata.unshift i.time[-9..-8] + '时'
         if i.pm2_5 != -1
