@@ -1,10 +1,9 @@
 define ['jquery', 'semantic', 'utils', 'charts'], ($, semantic, utils, charts) ->
 
-  city = utils.getCookie('city')
+  currentCity = utils.getCookie('city')
   availableCity = ['Guangzhou', 'Beijing', 'Shanghai', 'Chengdu', 'Shenyang']
-  if city not in availableCity
-    city = 'Guangzhou'
-  charts.renderChart city
+  currentCity = 'Guangzhou' if currentCity not in availableCity
+  charts.renderChart currentCity
 
   # listen city click
   for city in availableCity
