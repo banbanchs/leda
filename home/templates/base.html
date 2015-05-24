@@ -4,54 +4,17 @@
   {% load static %}
   <meta charset="UTF-8">
   <title>{% block title %}PM2.5{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'semantic.min.css' %}">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-  <header>
-    <div class="ui large menu">
-      <a href="#" class="item">PM2.5</a>
-      {% block header %}
-      <a href="#" class="active item"><i class="home icon"></i>Home</a>
-      <a href="#" class="item"><i class="info icon"></i>About</a>
-      {% endblock %}
-      <div class="right menu">
-        <a href="#" class="item"><i class="book icon"></i>API docs</a>
-        <div class="ui dropdown item">
-          <i class="list layout icon"></i>
-          City
-          <i class="dropdown icon"></i>
-          <div class="menu city-list">
-            <a href="javascript:void(0)" class="item" id="Guangzhou">Guangzhou</a>
-            <a href="javascript:void(0)" class="item" id="Beijing">Beijing</a>
-            <a href="javascript:void(0)" class="item" id="Shanghai">Shanghai</a>
-            <a href="javascript:void(0)" class="item" id="Chengdu">Chengdu</a>
-            <a href="javascript:void(0)" class="item" id="Shenyang">Shenyang</a>
-          </div>
-        </div>
-        <div class="ui dropdown item">
-          Lanuage
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <a href="#" class="item">English</a>
-            <a href="#" class="item">简体中文</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div class="header"></div>
+  <div class="content">
   {% block content %}
   {% endblock %}
-  <div class="ui horizontal divider"><i class="heart icon"></i></div>
-  <footer>
-    <div class="ui center aligned three column page grid">
-      <div class="row">
-        <div class="column"></div>
-        <div class="column">All right reserved by <a href="https://www.banbanchs.info">banbanchs</a>.</div>
-        <div class="column"></div>
-      </div>
-    </div>
-  </footer>
+  </div>
+  <div class="footer">
+    <p class="column">All right reserved by <a href="http://www.banbanchs.com">banbanchs</a>.</p>
+  </div>
   <script src="{% static 'echarts-all.js' %}"></script>
   <script data-main="{% static 'all.js' %}" src="{% static 'require.js' %}"></script>
 </body>

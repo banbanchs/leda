@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="content ui segment">
-  <div class="ui left rail">
-    <p>pm2.5</p>
+<div class="widget-wrapper" id="widget-pm25">
+  <div class="widget">
+    <div class="widget-header">
+      <h1 class="widget-title">pm2.5</h1>
+    </div>
+    <div class="widget-content">
+      <span class="widget-value"></span>
+      <span class="widget-value-description"></span>
+    </div>
   </div>
-  <div id="charts"></div>
+</div>
+<div class="widget-wrapper" id="widget-aqi">
+  <div class="widget">
+    <div class="widget-header">
+      <h1 class="widget-title">aqi</h1>
+    </div>
+    <div class="widget-content">
+      <span class="widget-value"></span>
+      <span class="widget-value-description"></span>
+    </div>
+  </div>
 </div>
 {% endblock %}
