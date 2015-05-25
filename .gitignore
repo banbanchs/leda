@@ -59,8 +59,12 @@ target/
 # sqlite
 db.sqlite3
 
+# vim
+*.swp
+
 *.txt
 *.zip
 
 static/themes
 static/tmp
+static/node_modules
