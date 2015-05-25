@@ -1,4 +1,4 @@
-define(['jquery', 'data'], function($, data) {
+define('dom', ['jquery', 'data'], function($, data) {
   return {
     setWidgetValue: function(type, level, value) {
       var $widget = $('#widget-' + type);

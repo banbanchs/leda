@@ -1,4 +1,4 @@
-define(function() {
+define('cookies', function() {
   function safeDecodeURIComponent(str) {
     try {
       return decodeURIComponent(str);
