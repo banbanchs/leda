@@ -1,4 +1,4 @@
-define('dom', ['jquery', 'data'], function($, data) {
+define('dom', ['jquery', 'data', 'cookies', 'map'], function($, data, cookies, map) {
   return {
     setWidgetValue: function(type, level, value) {
       var $widget = $('#widget-' + type);
@@ -31,6 +31,16 @@ define('dom', ['jquery', 'data'], function($, data) {
       $widget.addClass('widget-' + degree)
         .find('.widget-value').text(value).end()
         .find('.widget-value-description').text(degreeText);
+    },
+    bindNav: function() {
+      $('#cities').delegate('a', 'click', function(event) {
+        event.preventDefault();
+        var cityName = this.id;
+        cookies.put('city', cityName);
+        console.log(cityName);
+        return false;
+      });
+    },
     }
   };
 });
