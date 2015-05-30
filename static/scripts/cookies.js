@@ -17,13 +17,13 @@ define('cookies', function() {
      */
     get: function(key) {
       var i, len, cookie, value;
-      var name = key + ':';
+      var name = key + '=';
       var cookieArray = document.cookie.split('; ');
 
       for (i = 0, len = cookieArray.length; i < len; i++) {
         cookie = safeDecodeURIComponent(cookieArray[i]);
         if (cookie.indexOf(name) === 0) {
-          value = cookie.slice(name.length + 1);
+          value = cookie.slice(name.length);
         }
       }
 
