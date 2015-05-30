@@ -5,7 +5,12 @@ require.config({
   }
 });
 
-// require(['script']);
 require(['render'], function(render) {
   render.renderWidget();
+  render.renderChart('charts');
 });
+
+require(['dom'], function(dom) {
+  dom.bindNav();
+});
+
