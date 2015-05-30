@@ -1,4 +1,4 @@
-define('dom', ['jquery', 'data', 'cookies', 'map'], function($, data, cookies, map) {
+define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
   return {
     setWidgetValue: function(type, level, value) {
       var $widget = $('#widget-' + type);
