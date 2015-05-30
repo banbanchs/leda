@@ -6,13 +6,13 @@ define('render', ['cookies', 'data', 'dom', 'charts'], function(cookies, data, d
     currentCity = defaultCity;
     cookies.put('city', currentCity);
   }
+  var promiseData = $.when(data.getCity(currentCity));
 
   return {
     renderWidget: function() {
-      data.getCity(currentCity, function(airData) {
+      promiseData.then(function(airData) {
         dom.setWidgetValue('pm25', airData[0].level, airData[0].pm2_5);
         dom.setWidgetValue('aqi', airData[0].level, airData[0].aqi);
-        dom.setAirOverview(currentCity, airData[0].level);
       });
     },
     renderChart: function(chartId) {
@@ -24,11 +24,16 @@ define('render', ['cookies', 'data', 'dom', 'charts'], function(cookies, data, d
       myChart.showLoading({
         text: '正在努力的读取数据中...'
       });
-      data.getCity(currentCity, function(airData) {
+      promiseData.then(function(airData) {
         var handledData = data.handleAirData(airData);
         var option = charts.makeEchartOption(handledData);
         myChart.hideLoading();
         return myChart.setOption(option);
+      });
+    },
+    renderOverview: function() {
+      promiseData.then(function(airData) {
+        dom.setAirOverview(currentCity, airData[0].level);
       });
     }
   };

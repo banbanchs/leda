@@ -41,6 +41,20 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
         return false;
       });
     },
+    setAirOverview: function(cityName, level) {
+      cityName = cityName || cookies.get('city') || 'Guangzhou';
+      var cityNameByChinese = map.city[cityName];
+      var levelText, levelDescription, healthSuggestion;
+      var $description = $('#air-description');
+      airMessage = map.level[level];
+      levelText = airMessage.text;
+      levelDescription = airMessage.description;
+      healthSuggestion = airMessage.suggestion;
+
+      $description.find('.city-name').text(cityNameByChinese).end()
+        .find('.level').text(levelText).end()
+        .find('.level-description').text(levelDescription).end()
+        .find('.health-suggestion').text(healthSuggestion);
     }
   };
 });
