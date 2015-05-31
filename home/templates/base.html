@@ -7,13 +7,26 @@
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-  <div class="header"></div>
+  <div class="header">
+    <div class="nav">
+      <ul id="cities">
+        <li><a id="Guangzhou" href="javascript: void(0)">广州</a></li>
+        <li><a id="Beijing" href="javascript: void(0)">北京</a></li>
+        <li><a id="Shanghai" href="javascript: void(0)">上海</a></li>
+        <li><a id="Chengdu" href="javascript: void(0)">成都</a></li>
+        <li><a id="Shenyang" href="javascript: void(0)">沈阳</a></li>
+      </ul>
+    </div>
+    <span class="header-shadow"></span>
+  </div>
   <div class="content">
   {% block content %}
   {% endblock %}
   </div>
   <div class="footer">
-    <p class="column">All right reserved by <a href="http://www.banbanchs.com">banbanchs</a>.</p>
+    <div class="container">
+      <p>All right reserved by <a href="http://www.banbanchs.com">banbanchs</a>.</p>
+    </div>
   </div>
   <script src="{% static 'echarts-all.js' %}"></script>
   <script data-main="{% static 'all.js' %}" src="{% static 'require.js' %}"></script>
