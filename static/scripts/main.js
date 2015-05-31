@@ -11,7 +11,6 @@ require(['render'], function(render) {
   render.renderChart('charts');
 });
 
-require(['dom'], function(dom) {
-  dom.bindNav();
+require(['render', 'dom'], function(render, dom) {
+  dom.bindNav(render.reRenderAll);
 });
-

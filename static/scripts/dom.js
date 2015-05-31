@@ -32,12 +32,15 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
         .find('.widget-value').text(value).end()
         .find('.widget-value-description').text(degreeText);
     },
-    bindNav: function() {
+    bindNav: function(callback) {
       $('#cities').delegate('a', 'click', function(event) {
         event.preventDefault();
         var cityName = this.id;
         cookies.put('city', cityName);
         console.log(cityName);
+        if (typeof callback === 'function') {
+          callback();
+        }
         return false;
       });
     },
