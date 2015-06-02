@@ -36,7 +36,7 @@ define('render', ['cookies', 'data', 'dom', 'charts'], function(cookies, data, d
   };
   var renderOverview = function() {
     promiseData.then(function(airData) {
-      dom.setAirOverview(currentCity, airData[0].level);
+      dom.setAirOverview(currentCity, airData[0].level, airData[0].time);
     });
   };
   var reRenderAll = function() {

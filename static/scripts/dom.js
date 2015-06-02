@@ -1,4 +1,8 @@
 define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
+  function addZero(n) {
+    return (n < 10 ? '0' : '') + n;
+  }
+
   return {
     setWidgetValue: function(type, level, value) {
       var $widget = $('#widget-' + type);
@@ -44,7 +48,7 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
         return false;
       });
     },
-    setAirOverview: function(cityName, level) {
+    setAirOverview: function(cityName, level, lastUpdate) {
       cityName = cityName || cookies.get('city') || 'Guangzhou';
       var cityNameByChinese = map.city[cityName];
       var levelText, levelDescription, healthSuggestion;
@@ -53,11 +57,15 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
       levelText = airMessage.text;
       levelDescription = airMessage.description;
       healthSuggestion = airMessage.suggestion;
+      var date = new Date(lastUpdate);
+      var dateString = date.getFullYear() + '-' + addZero(date.getMonth()) + '-' + addZero(date.getDate())
+        + ' ' + addZero(date.getHours()) + ':' + addZero(date.getMinutes());
 
       $description.find('.city-name').text(cityNameByChinese).end()
         .find('.level').text(levelText).end()
         .find('.level-description').text(levelDescription).end()
-        .find('.health-suggestion').text(healthSuggestion);
+        .find('.health-suggestion').text(healthSuggestion).end()
+        .find('.updatetime').text(dateString);
     }
   };
 });
