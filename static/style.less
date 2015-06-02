@@ -161,8 +161,9 @@ a:hover {
 }
 
 .footer {
+  border-top: 1px solid #f2f2f2;
   text-align: center;
-  background: #FFF;
+  // background: #FFF;
   padding: 30px 0;
 }
 
@@ -237,7 +238,6 @@ a:hover {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: @defaults-light;
-  // background-color: #fff;
 }
 
 .widget-value {
@@ -303,7 +303,7 @@ a:hover {
   position: relative;
 
   .header-shadow {
-    .bg-shadow(107px);
+    .bg-shadow(105px);
   }
 }
 .nav {
@@ -387,16 +387,18 @@ a:hover {
   .charts {
     height: 450px;
     margin: 0 30px;
+    padding: 20px;
+    border: 1px solid #f2f2f2;
   }
 
   .row {
-    background: #FFF;
     margin-bottom: 30px;
     padding: 100px 50px;
   }
 
   .air-overview {
     background: #85949C;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 
     .air-description {
       float: left;
@@ -405,7 +407,12 @@ a:hover {
       background: url(images/cloud1.png) no-repeat top right;
       animation: animatedCloud 5s ease-in-out infinite;
 
-      h2 {
+      .city-description {
+        color: #C4C8CA;
+        font-weight: 300;
+      }
+
+      .city-name {
         font-size: 2.5em;
         font-weight: 700;
         padding-bottom: 15px;
@@ -414,11 +421,11 @@ a:hover {
         width: 61.8%;
       }
 
-      h3 {
+      .level {
         font-size: 1.4em;
       }
 
-      h3, p {
+      .level, p {
         font-weight: 400;
         margin-bottom: 0.6em;
       }
@@ -430,8 +437,10 @@ a:hover {
     text-align: center;
     line-height: 1;
 
+    width: 70%;
     height: auto;
-    margin: 1em 0;
+    margin: 1em auto;
+    padding: 1em 0;
     position: relative;
 
     user-select: none;

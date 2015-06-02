@@ -4,7 +4,7 @@ define(['jquery', 'data'], function($, data) {
     makeEchartOption: function(handledData) {
       return {
         title: {
-          text: '最近12小时空气质量的变化'
+          text: '最近12小时空气质量指数AQI的变化趋势'
         },
         tooltip: {
           trigger: 'axis'

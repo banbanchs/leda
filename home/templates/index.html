@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="widget-wrapper" id="widget-pm25">
-  <div class="widget">
-    <div class="widget-header">
-      <h1 class="widget-title">pm2.5</h1>
+<div class="air-overview row">
+  <div class="container">
+    <div class="air-description" id="air-description">
+      <p class="city-description">实时空气质量指数（AQI）</p>
+      <h2 class="city-name" id="city-name"></h2>
+      <h3 class="level"></h3>
+      <p class="level-description"></p>
+      <p class="health-suggestion"></p>
     </div>
-    <div class="widget-content">
-      <span class="widget-value"></span>
-      <span class="widget-value-description"></span>
+    <div class="widget-wrapper" id="widget-pm25">
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">pm2.5浓度</h3>
+        </div>
+        <div class="widget-content">
+          <span class="widget-value">-1</span>
+          <span class="widget-value-description">unknown</span>
+        </div>
+      </div>
+    </div>
+    <div class="widget-wrapper" id="widget-aqi">
+      <div class="widget">
+        <div class="widget-header">
+          <h3 class="widget-title">aqi指数</h3>
+        </div>
+        <div class="widget-content">
+          <span class="widget-value">-1</span>
+          <span class="widget-value-description">unknown</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<div class="widget-wrapper" id="widget-aqi">
-  <div class="widget">
-    <div class="widget-header">
-      <h1 class="widget-title">aqi</h1>
-    </div>
-    <div class="widget-content">
-      <span class="widget-value"></span>
-      <span class="widget-value-description"></span>
-    </div>
+<div class="divider">Charts</div>
+<div class="row">
+  <div class="container">
+    <div class="charts" id="charts"></div>
   </div>
 </div>
 {% endblock %}
