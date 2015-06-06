@@ -1,10 +1,11 @@
 # coding=utf-8
 
-from rest_framework import routers
+from django.conf.urls import url, include
+from rest_framework.urlpatterns import format_suffix_patterns
 
 from . import views
 
-
-api_router = routers.DefaultRouter()
-api_router.register(r'pm25/(?P<city>\w+)/latest', views.AirConditionViewSets, base_name='pm25')
-api_router.register(r'pm25-avg/(?P<city>\w+)/latest', views.AirAverageViewSets, base_name='pm25-avg')
+urlpatterns = format_suffix_patterns([
+    url(r'^pm25/(?P<city>\w+)/latest$', views.AirConditionViewSets.as_view({'get': 'list'}), name='pm25-list'),
+    url(r'^pm25-avg/(?P<city>\w+)/latest$', views.AirAverageViewSets.as_view({'get': 'list'}), name='pm25-avg-list'),
+])
