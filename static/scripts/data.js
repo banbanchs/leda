@@ -2,7 +2,7 @@ define('data', ['jquery'], function($) {
 
   return {
     getCity: function(cityName) {
-      var api = '/api/pm25/' + cityName + '/latest/';
+      var api = '/api/pm25/' + cityName + '/latest';
       return $.getJSON(api);
     },
     /**
