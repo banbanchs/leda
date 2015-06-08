@@ -32,7 +32,8 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
           degreeText = '中重度污染';
           break;
       }
-      $widget.addClass('widget-' + degree)
+      $widget.removeClass('widget-bad widget-middle widget-moderate widget-good widget-nodata')
+        .addClass('widget-' + degree)
         .find('.widget-value').text(value).end()
         .find('.widget-value-description').text(degreeText);
     },
