@@ -59,7 +59,7 @@ define('dom', ['jquery', 'cookies', 'map'], function($, cookies, map) {
       levelDescription = airMessage.description;
       healthSuggestion = airMessage.suggestion;
       var date = new Date(lastUpdate);
-      var dateString = date.getFullYear() + '-' + addZero(date.getMonth()) + '-' + addZero(date.getDate())
+      var dateString = date.getFullYear() + '-' + addZero(date.getMonth()+1) + '-' + addZero(date.getDate())
         + ' ' + addZero(date.getHours()) + ':' + addZero(date.getMinutes());
 
       $description.find('.city-name').text(cityNameByChinese).end()
